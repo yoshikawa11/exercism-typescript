@@ -1,0 +1,1 @@
+[the TypeScript exercises on Exercism](https://exercism.org/tracks/typescript/exercises)の解答
