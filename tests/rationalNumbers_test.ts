@@ -2,7 +2,7 @@ import {
   assertAlmostEquals,
   assertEquals,
 } from "https://deno.land/std@0.224.0/assert/mod.ts";
-import { Rational } from "../answers/rational.ts";
+import { Rational } from "../answers/rationalNumbers.ts";
 
 Deno.test("Addition", () => {
   assertEquals(new Rational(1, 2).add(new Rational(1, 2)), new Rational(1, 1));
