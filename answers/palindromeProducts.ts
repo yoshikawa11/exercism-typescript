@@ -33,8 +33,8 @@ const findPalindromeProducts = (min: number, max: number) => {
       const product = i * j;
       if (!isPalindrome(product)) continue;
 
-      smallest = updatePalindrome(smallest, product, [i, j]);
-      largest = updatePalindrome(largest, product, [i, j]);
+      smallest = updatePalindrome(smallest, product, [i, j], (a, b) => a < b);
+      largest = updatePalindrome(largest, product, [i, j], (a, b) => a > b);
     }
   }
 
@@ -45,8 +45,9 @@ const updatePalindrome = (
   current: Palindrome,
   product: number,
   factors: Factor,
+  compare: (a: number, b: number) => boolean,
 ): Palindrome => {
-  if (current.value === null || product < current.value) {
+  if (current.value === null || compare(product, current.value)) {
     return { value: product, factors: [factors] };
   } else if (product === current.value) {
     return { ...current, factors: [...current.factors, factors] };
