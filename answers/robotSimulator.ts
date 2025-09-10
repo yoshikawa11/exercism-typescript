@@ -1,4 +1,4 @@
-export const InvalidInputError = "";
+export const InvalidInputError = "Invalid direction";
 
 type Direction = "north" | "east" | "south" | "west";
 type Coordinates = [number, number];
